@@ -1,4 +1,4 @@
-import React, {  useRef } from "react";
+import React, {  useRef, useState  } from "react";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -7,21 +7,42 @@ import TextField from "@material-ui/core/TextField";
 
 export const ExpressionInput = ({ handleSubmit }) => {
 
-  //const [input, setInput] = useState();
+ 
   const valueRef = useRef('') //creating a refernce for TextField Component
+  const [helperText, setHelperText] = useState("");
 
-    const sendValue = () => {
-        return console.log(valueRef.current.value) //on clicking button accesing current value of TextField and outputing it to console 
-    }
+    const addEntryClick = () => { 
+      if(valueRef.current.value===""){
+        setHelperText("No Input! Try again please")
+        return
+      }
+      else{
+        setHelperText('')
+      }
 
+      let oldArray= localStorage.getItem('myValueInLocalStorage')
+      let newArray= []
+      if(oldArray===null){
+        oldArray=[valueRef.current.value]
+        localStorage.setItem('myValueInLocalStorage', oldArray)
+        return [valueRef.current.value, <li>{oldArray}</li>]
+      }
+      else{
+      newArray=[oldArray,valueRef.current.value]
+      localStorage.setItem('myValueInLocalStorage', newArray)
+      return [valueRef.current.value, <li>{newArray}</li>]
+      }
+  };
+
+ 
 
  return (
    
     <Card>
       <CardContent>
         <TextField fullWidth={true} label="Expression" variant="outlined"
-         inputRef=
-         {valueRef} />
+         inputRef={valueRef} helperText={helperText }/>
+         {/*making a direct reference to the value from the input field from the DOM*/}
       </CardContent>
       <CardActions>
         <Button
@@ -29,13 +50,11 @@ export const ExpressionInput = ({ handleSubmit }) => {
           variant="contained"
           onClick={() => handleSubmit(
             /** @TODO: Add your implementation here */
-           // FormControlContext.Provider?
-           //my Problem is I am not sure how access the textfield
-           //console.log( input)
-           //alert(input?.value)
-           sendValue
-           
+
+         addEntryClick() 
+         
             )}
+            
         >
           Submit
         </Button>

@@ -7,6 +7,7 @@ export default class Calculation {
         /**
          * @TODO Add your implementaiton here
          */
+        console.log(this.expression)
         return this.expression;
     }
 }
