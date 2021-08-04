@@ -1,22 +1,22 @@
+import { ListItemIcon } from "@material-ui/core";
+import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
-import { CardActions, ListItemIcon } from "@material-ui/core";
-import SubdirectoryArrowRightIcon from '@material-ui/icons/SubdirectoryArrowRight';
 import Typography from "@material-ui/core/Typography";
+import SubdirectoryArrowRightIcon from '@material-ui/icons/SubdirectoryArrowRight';
+import React, { useEffect, useRef, useState } from 'react';
 
-import React, { useState, useEffect, useRef } from 'react';
 
 
 const History = (props) => {
 
     const [data, setData] = useState([])
-    const test = useRef(null)
+    const test = useRef(null)//trying to make on erase delte List 
 
     useEffect(() => {
         setData((data) => [...data, props.content])
-    }, [props.content]);
+    }, [props.content]);//on new input add it to an array
 
 
 
