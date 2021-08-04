@@ -1,18 +1,13 @@
-import React from "react";
+import { CardActions } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import Divider from '@material-ui/core/Divider';
-import ListItemText from '@material-ui/core/ListItemText';
-import { CardActions, ListItemIcon } from "@material-ui/core";
-import InboxIcon from '@material-ui/icons/Inbox';
-import Button from "@material-ui/core/Button"
+import Typography from "@material-ui/core/Typography";
 import PropTypes from 'prop-types';
+import React from "react";
 import History from "./History";
 
-import SubdirectoryArrowRightIcon from '@material-ui/icons/SubdirectoryArrowRight';
 //https://www.robinwieruch.de/react-add-item-to-list
 
 
@@ -35,7 +30,7 @@ export const Results = ({ content }) => (
        : null}
        {((contentArray) => [...contentArray, content])}
       {[content].map((content, index, contentArray) =>  ((contentArray) => [...contentArray, content]),console.log(content))}
-      {/*https://h3manth.com/new/blog/2014/thisarg-in-javascript/ */}
+      {/*https://h3manth.com/new/blog/2014/thisarg-in-javascript/ can t figure out how to get the List that is in History to work here*/}
 
     </CardContent>
     <CardActions>

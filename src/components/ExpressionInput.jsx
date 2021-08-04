@@ -15,7 +15,7 @@ export const ExpressionInput = ({ handleSubmit }) => {
   const valueRef = useRef('') //creating a refernce for TextField Component
   const submitButton = useRef(null) //creating a refernce to button
   useEffect(() => {
-    valueRef.current.focus()
+    valueRef.current.focus() //auto focus input field on load
   }, [])
 
   const keyPress = (e) => {
@@ -24,7 +24,7 @@ export const ExpressionInput = ({ handleSubmit }) => {
       //submitButton.current and then? so I wont have to write code twice to get strange bugs
     }
   }
-  //test for right character input
+  //test for right character input(should be done)
   //helper text shoudn' t display on start 
   //wrong input belongs in the helper text not in the history
 
