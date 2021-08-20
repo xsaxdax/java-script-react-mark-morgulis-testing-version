@@ -1,50 +1,86 @@
-import { CardActions } from "@material-ui/core";
+import { CardActions, ListItemIcon } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
+import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import Typography from "@material-ui/core/Typography";
+import SubdirectoryArrowRightIcon from '@material-ui/icons/SubdirectoryArrowRight';
 import PropTypes from 'prop-types';
-import React from "react";
-import History from "./History";
+import React, { useEffect, useState } from "react";
 
 //https://www.robinwieruch.de/react-add-item-to-list
 
 
 
-export const Results = ({ content }) => (
+export const Results = ({ content }) => {
+
+  const [data, setData] = useState([])
 
 
-  <Card data-testid="results">
-    <CardContent>
-      <Typography variant="h5">Results</Typography>
-      {/** @TODO: Add your implementation here */}
-      {content ?
-      <List >
-      
-        
-          
-          <React.Fragment> <History content={content} /></React.Fragment>
-      </List>
-      
-       : null}
-       {((contentArray) => [...contentArray, content])}
-      {[content].map((content, index, contentArray) =>  ((contentArray) => [...contentArray, content]),console.log(content))}
-      {/*https://h3manth.com/new/blog/2014/thisarg-in-javascript/ can t figure out how to get the List that is in History to work here*/}
+  useEffect(() => {
+    if (content !== "") {
+      setData((data) => [...data, content])
+    }
+  }, [content]);//on new input add it to an array
 
-    </CardContent>
-    <CardActions>
-      <Button
-        variant="outlined" color="secondary"
-      
+  return (
+    <Card data-testid="results">
+      <CardContent>
+        <Typography variant="h5">Results</Typography>
+        {/** @TODO: Add your implementation here */}
 
-      >
-        Erase Results
+        <List >
+
+          {data.length? <React.Fragment>
+            <ListItem >
+              <ListItemIcon >
+                <SubdirectoryArrowRightIcon />
+              </ListItemIcon>
+              <ListItemText primary={content} />
+            </ListItem>
+            <Divider variant="fullWidth" />
+          </React.Fragment> :null}
+
+
+
+          {data.map((data, index/*, results: all the history*/) =>
+            <React.Fragment>
+
+
+              <ListItem key={index}>
+
+                <ListItemIcon key={index}>
+                  <Typography variant="subtitle1">{index + 1}</Typography>
+                </ListItemIcon>
+
+                <ListItemText primary={data} />
+
+              </ListItem>
+
+              <Divider variant="fullWidth" />
+            </React.Fragment>
+          )
+          }
+        </List>
+
+
+      </CardContent>
+      <CardActions>
+        <Button
+          variant="outlined" color="secondary"
+          onClick={() =>setData([])}
+
+        >
+          Erase Results
         </Button>
 
-    </CardActions>
-  </Card>
-);
+      </CardActions>
+    </Card>
+  );
+}
 
 Results.propTypes =
 {

@@ -17,7 +17,7 @@ export default class Calculation {
          * @TODO Add your implementaiton here
          */
         //add checks for input, check illegal characters
-        if ( this.expression.match(/[`~!@#$%&§_<>?:"{},;'[\]]/im)){
+        if ( this.expression.match(/^[a-zA-Z!@#$%^&*()[\]{};':"\\|,<>/?]*$/)){
             return null
         }
         let input=this.expression
@@ -27,8 +27,6 @@ export default class Calculation {
         }else{
             return null
         }
-        //9 of 11 tests succed
-        //save the input expression as local storage? don t have an other clue
         ;
     }
 }
