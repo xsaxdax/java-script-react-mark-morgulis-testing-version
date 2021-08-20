@@ -10,8 +10,9 @@ import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/styles/makeStyles";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import { createMuiTheme } from "@material-ui/core/styles/";
+import GitHubIcon from '@material-ui/icons/GitHub';
 
-import logo from "./itdesign-logo.png";
+
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -24,7 +25,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const itdesignTheme = createMuiTheme({
+const theme = createMuiTheme({
   palette: {
     primary: {
       main: "#a71417",
@@ -35,20 +36,21 @@ const itdesignTheme = createMuiTheme({
 export const Layout = ({ children }) => {
   const classes = useStyles();
   return (
-    <ThemeProvider theme={itdesignTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppBar position="static" color="transparent">
         <Toolbar>
           <div className={classes.logoWrapper}>
-            <img src={logo} width={150} alt="itdesign Logo" />
+          <Typography variant="h5"> Mark Morgulis</Typography>
+     
           </div>
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://gitlab.com/applicationChallenges/templates/javascript"
+            href="https://github.com/xsaxdax"
           >
             <IconButton>
-              <HelpIcon />
+              <GitHubIcon />
             </IconButton>
           </a>
         </Toolbar>

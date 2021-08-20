@@ -13,7 +13,7 @@ export const ExpressionInput = ({ handleSubmit }) => {
 
   const [input, setInput] = useState('')
   const valueRef = useRef('') //creating a refernce for TextField Component
-  const submitButton = useRef(null) //creating a refernce to button
+
   useEffect(() => {
     valueRef.current.focus() //auto focus input field on load
   }, [])
@@ -49,7 +49,7 @@ export const ExpressionInput = ({ handleSubmit }) => {
 
 
           )}
-          ref={submitButton}
+         
 
         >
           Submit

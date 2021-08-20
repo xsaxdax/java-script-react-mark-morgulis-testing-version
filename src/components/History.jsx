@@ -5,27 +5,25 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from "@material-ui/core/Typography";
 import SubdirectoryArrowRightIcon from '@material-ui/icons/SubdirectoryArrowRight';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 
 const History = (props) => {
 
     const [data, setData] = useState([])
-    const test = useRef(null)//trying to make on erase delte List 
+   
 
     useEffect(() => {
         setData((data) => [...data, props.content])
     }, [props.content]);//on new input add it to an array
 
 
-
-
     return (
 
 
-        <List ref={test}>
-            {console.log(test)}
+        <List >
+            
             <React.Fragment>
 
                 <ListItem >
@@ -59,6 +57,7 @@ const History = (props) => {
 
             </React.Fragment>
         </List>
+        
 
     )
 }
