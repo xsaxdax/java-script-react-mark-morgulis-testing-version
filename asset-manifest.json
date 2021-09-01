@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/calculator/static/js/main.e25fefd7.chunk.js",
-    "main.js.map": "/calculator/static/js/main.e25fefd7.chunk.js.map",
-    "runtime-main.js": "/calculator/static/js/runtime-main.c1610696.js",
-    "runtime-main.js.map": "/calculator/static/js/runtime-main.c1610696.js.map",
-    "static/js/2.4a567c84.chunk.js": "/calculator/static/js/2.4a567c84.chunk.js",
-    "static/js/2.4a567c84.chunk.js.map": "/calculator/static/js/2.4a567c84.chunk.js.map",
-    "static/js/3.2d6dd6c6.chunk.js": "/calculator/static/js/3.2d6dd6c6.chunk.js",
-    "static/js/3.2d6dd6c6.chunk.js.map": "/calculator/static/js/3.2d6dd6c6.chunk.js.map",
-    "index.html": "/calculator/index.html",
-    "static/js/2.4a567c84.chunk.js.LICENSE.txt": "/calculator/static/js/2.4a567c84.chunk.js.LICENSE.txt"
+    "main.js": "/java-script-react-mark-morgulis-testing-version/static/js/main.e25fefd7.chunk.js",
+    "main.js.map": "/java-script-react-mark-morgulis-testing-version/static/js/main.e25fefd7.chunk.js.map",
+    "runtime-main.js": "/java-script-react-mark-morgulis-testing-version/static/js/runtime-main.29c09724.js",
+    "runtime-main.js.map": "/java-script-react-mark-morgulis-testing-version/static/js/runtime-main.29c09724.js.map",
+    "static/js/2.4a567c84.chunk.js": "/java-script-react-mark-morgulis-testing-version/static/js/2.4a567c84.chunk.js",
+    "static/js/2.4a567c84.chunk.js.map": "/java-script-react-mark-morgulis-testing-version/static/js/2.4a567c84.chunk.js.map",
+    "static/js/3.2d6dd6c6.chunk.js": "/java-script-react-mark-morgulis-testing-version/static/js/3.2d6dd6c6.chunk.js",
+    "static/js/3.2d6dd6c6.chunk.js.map": "/java-script-react-mark-morgulis-testing-version/static/js/3.2d6dd6c6.chunk.js.map",
+    "index.html": "/java-script-react-mark-morgulis-testing-version/index.html",
+    "static/js/2.4a567c84.chunk.js.LICENSE.txt": "/java-script-react-mark-morgulis-testing-version/static/js/2.4a567c84.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c1610696.js",
+    "static/js/runtime-main.29c09724.js",
     "static/js/2.4a567c84.chunk.js",
     "static/js/main.e25fefd7.chunk.js"
   ]
